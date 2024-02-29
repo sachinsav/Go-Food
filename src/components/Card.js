@@ -5,7 +5,7 @@ function Card({food}) {
   return (
     
     <div className="card m-2" style={{"width": "18rem"}}>
-        <img src={food.img} className="card-img-top" alt="..." />
+        <img src={food.img} className="card-img-top" alt="..." style={{height:"190px", objectFit:"cover"}}/>
         <div className="card-body">
           <h5 className="card-title">{food.name}</h5>
           <p className="card-text">

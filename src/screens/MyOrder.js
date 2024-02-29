@@ -1,6 +1,6 @@
 import React from 'react'
 
-function AboutUS() {
+function MyOrder() {
   return (
     <div>
       This is About us
@@ -8,4 +8,4 @@ function AboutUS() {
   )
 }
 
-export default AboutUS
+export default MyOrder

@@ -1,10 +1,11 @@
 import './App.css';
-import AboutUS from './screens/AboutUS';
+import AboutUS from './screens/MyOrder';
 import Home from './screens/Home';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Layout from './screens/Layout';
 import Login from './screens/Login';
 import SignUp from './screens/SignUp';
+import MyOrder from './screens/MyOrder';
 function App() {
   return (
     <>
@@ -14,7 +15,7 @@ function App() {
           <Route index element={<Home />} />
           <Route exact path="login" element={<Login />} />
           <Route exact path="signup" element={<SignUp />} />
-          <Route exact path="about" element={<AboutUS />} />
+          <Route exact path="myorder" element={<MyOrder />} />
         </Route>
       </Routes>
       
