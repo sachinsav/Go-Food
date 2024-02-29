@@ -1,6 +1,7 @@
 const express = require('express')
 const db = require('./db')
 const userRoute = require('./routes/UserRoutes');
+const foodRoute = require('./routes/foodRoutes');
 const cors = require('cors');
 const app = express()
 const port = 5000
@@ -11,6 +12,7 @@ app.get("/", (req, res) => {
 });
 app.use(express.json());
 app.use("/api", userRoute);
+app.use("/api", foodRoute);
 
 app.listen(port, ()=>{
     console.log(`server is running on port  ${port}`)

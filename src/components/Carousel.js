@@ -1,23 +1,46 @@
 import React from "react";
 
-function Carousel() {
+function Carousel({setSearch}) {
   return (
     <div id="carouselExample" className="carousel slide mb-3">
-        <div className="carousel-caption d-none d-md-block" style={{"zIndex":"10"}}>
+      <div
+        className="carousel-caption d-none d-md-block"
+        style={{ zIndex: "10" }}
+      >
         <div className="input-group">
-    <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-    <button type="button" className="btn btn-primary" data-mdb-ripple-init>search</button>
-</div>
+          <input
+            type="search"
+            className="form-control rounded"
+            placeholder="Search"
+            aria-label="Search"
+            onChange = {(e)=>setSearch(e.target.value)}
+            aria-describedby="search-addon"
+          />
+         
+            
+        </div>
       </div>
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src="https://source.unsplash.com/random/900x150?burger" className="d-block w-100" alt="..." />
+          <img
+            src="https://source.unsplash.com/random/900x150?burger"
+            className="d-block w-100"
+            alt="..."
+          />
         </div>
         <div className="carousel-item">
-          <img src="https://source.unsplash.com/random/900x150?pizza" className="d-block w-100" alt="..." />
+          <img
+            src="https://source.unsplash.com/random/900x150?pizza"
+            className="d-block w-100"
+            alt="..."
+          />
         </div>
         <div className="carousel-item">
-          <img src="https://source.unsplash.com/random/900x150?biryani" className="d-block w-100" alt="..." />
+          <img
+            src="https://source.unsplash.com/random/900x150?biryani"
+            className="d-block w-100"
+            alt="..."
+          />
         </div>
       </div>
       <button

@@ -1,14 +1,15 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-function Card() {
+function Card({food}) {
+  const optionKeys = Object.keys(food.options[0]);
   return (
+    
     <div className="card m-2" style={{"width": "18rem"}}>
-        <img src="https://source.unsplash.com/random/200x200?pizza" className="card-img-top" alt="..." />
+        <img src={food.img} className="card-img-top" alt="..." />
         <div className="card-body">
-          <h5 className="card-title">Card title</h5>
+          <h5 className="card-title">{food.name}</h5>
           <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            {food.description}
           </p>
           <div  className="container">
           <select className="m-2">
@@ -17,8 +18,7 @@ function Card() {
               )}
           </select>
           <select className="m-2">
-            <option value="half">Half</option>
-            <option value="full">Full</option>
+            {optionKeys.map(key => <option value={key}>{key}</option>)}
           </select>
           <div className="d-inline">Total Price:</div>
           </div>
