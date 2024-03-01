@@ -26,10 +26,12 @@ function Navbar() {
         </ul>
         <ul className="navbar-nav ms-auto">
         {localStorage.getItem("authToken")?(
-          <div className='d-flex'>
-            <div className="nav-link">My Cart</div>
+          <>
+          <li>
+            <div className="nav-link">My Cart</div></li><li>
             <div className="nav-link" onClick={handleLogout}>Logout</div>
-          </div>
+          </li>
+          </>
         ):(
         <>
         <li className="nav-item">

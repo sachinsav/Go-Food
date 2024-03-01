@@ -4,7 +4,7 @@ function Carousel({setSearch}) {
   return (
     <div id="carouselExample" className="carousel slide mb-3">
       <div
-        className="carousel-caption d-none d-md-block"
+        className="carousel-caption d-sm-block"
         style={{ zIndex: "10" }}
       >
         <div className="input-group">
