@@ -5,7 +5,13 @@ const dispatchContext = createContext();
 function reducer(state, action){
     switch(action.type){
         case 'ADD':
-            return ([...state, {id:action.id, categoryName: action.categoryName, name:action.name, img:action.img, description: action.description, option:action.option, price:action.price}])
+            return ([...state, {id:action.id, categoryName: action.categoryName, name:action.name, img:action.img, description: action.description, option:action.option, price:action.price, qty:action.qty, size:action.size, date:new Date()}])
+        case 'REMOVE':
+            let newArray = [...state]
+            newArray.splice(action.index, 1);
+            return newArray;
+        case 'DROP':
+            return [];
         default:
             return state
     }

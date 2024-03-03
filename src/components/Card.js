@@ -9,15 +9,15 @@ function Card({food}) {
   const optionRef = useRef();
 
   useEffect(()=>{
-    setUnitPrice(food.options[0][optionRef.current.value])
+    setUnitPrice(optionRef.current.value)
   },[])
-  let finalPrice = qty * unitPrice;
+  let finalPrice = qty * food.options[0][unitPrice];
 
   //cart
   const cartData = useCartContext(); //cart- food data array
   const dispatch = useDispatchContext(); //set cart data
   const handleAddToCart = ()=>{
-    dispatch({type:"ADD", id:food._id, categoryName: food.CategoryName, name:food.name, img:food.img, description: food.description, option:food.options, price:finalPrice});
+    dispatch({type:"ADD", id:food._id, categoryName: food.CategoryName, name:food.name, img:food.img, description: food.description, option:food.options, price:finalPrice, qty: qty, size:unitPrice});
     console.log(cartData)
   }
 
@@ -38,7 +38,7 @@ function Card({food}) {
               <option key={e+1} value={e+1}>{e+1}</option>
               )}
           </select>
-          <select className="m-2" ref={optionRef} onChange={(e)=>setUnitPrice(food.options[0][e.target.value])}>
+          <select className="m-2" ref={optionRef} onChange={(e)=>setUnitPrice(e.target.value)}>
             {optionKeys.map(key => <option key={key} value={key}>{key}</option>)}
           </select>
           <div className="d-inline "><b>  ₹{finalPrice}/-</b></div>

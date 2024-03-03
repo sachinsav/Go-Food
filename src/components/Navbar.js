@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import Modal from '../Modal';
+import { useCartContext, useDispatchContext } from '../screens/CartContext';
+import Cart from '../screens/Cart';
 function Navbar() {
   const navigate = useNavigate();
+  const dispatch = useDispatchContext();
+  const [showCart, setShowCart] = useState(false);
+  const cartData = useCartContext();
+  
   const handleLogout = () => {
     localStorage.removeItem("authToken");
+    localStorage.removeItem("email");
+    dispatch({type:'DROP'});
     navigate("/login", {replace: true});
   }
+  
   return (
     <>
      <nav className="navbar navbar-dark bg-primary navbar-expand-lg">
@@ -28,8 +38,18 @@ function Navbar() {
         {localStorage.getItem("authToken")?(
           <>
           <li>
-            <div className="nav-link">My Cart</div></li><li>
-            <div className="nav-link" onClick={handleLogout}>Logout</div>
+          <button type="button" className="btn btn-primary" onClick={()=>setShowCart(true)}>
+            My Cart <span className="badge badge-light">{cartData.length}</span>
+          </button>
+          {showCart? <Modal onClose={() => {setShowCart(false)}}>
+              <Cart></Cart>
+            </Modal>:null}
+          </li>
+
+          <li>
+          <button type="button" className="btn btn-primary" onClick={handleLogout}>
+          Logout
+          </button>
           </li>
           </>
         ):(

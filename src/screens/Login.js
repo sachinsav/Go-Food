@@ -26,6 +26,7 @@ function Login() {
             return;
         }
         console.log(responseJson)
+        localStorage.setItem("email", credential.email)
         localStorage.setItem("authToken",responseJson.authToken);
         navigate("/");
 
