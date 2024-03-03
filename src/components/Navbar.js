@@ -15,6 +15,8 @@ function Navbar() {
     dispatch({type:'DROP'});
     navigate("/login", {replace: true});
   }
+  const [isHomeActive, setIsHomeActive] = useState(true);
+  const [isMyOrderActive, setIsMyOrderActive] = useState(false);
   
   return (
     <>
@@ -26,12 +28,12 @@ function Navbar() {
     </button>
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav">
-        <li className="nav-item">
-          <Link className="nav-link" aria-current="page" to="/">Home</Link>
+        <li className="nav-item" onClick={()=>{setIsHomeActive(true);setIsMyOrderActive(false)}}>
+          <Link className={(isHomeActive?"active ":"") + "nav-link"} aria-current="page" to="/">Home</Link>
         </li>
-        {localStorage.getItem("authToken")?<li className="nav-item">
-          <Link className="nav-link" to="/myorder">My Order</Link>
-        </li>:""}
+        {localStorage.getItem("authToken")?<li className="nav-item" onClick={()=>{setIsHomeActive(false);setIsMyOrderActive(true)}}>
+          <Link className={"nav-link "+(isMyOrderActive?"active":"")} to="/myorder">My Order</Link>
+        </li>:null}
         
         </ul>
         <ul className="navbar-nav ms-auto">

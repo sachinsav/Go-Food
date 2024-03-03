@@ -18,7 +18,6 @@ function Card({food}) {
   const dispatch = useDispatchContext(); //set cart data
   const handleAddToCart = ()=>{
     dispatch({type:"ADD", id:food._id, categoryName: food.CategoryName, name:food.name, img:food.img, description: food.description, option:food.options, price:finalPrice, qty: qty, size:unitPrice});
-    console.log(cartData)
   }
 
 

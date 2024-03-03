@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const secret = require("./secret");
 
-const mongoURI = secret.mongoURI;
+require('dotenv').config();
+const mongoURI = process.env.MONGO_URI;
 
 async function db(){
     try {

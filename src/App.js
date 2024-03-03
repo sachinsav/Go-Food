@@ -1,5 +1,4 @@
 import './App.css';
-import AboutUS from './screens/MyOrder';
 import Home from './screens/Home';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Layout from './screens/Layout';

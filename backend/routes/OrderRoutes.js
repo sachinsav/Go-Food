@@ -11,7 +11,7 @@ orderRoute.post('/addOrder', async (req, res)=>{
         res.status(200).json(orders);
     }catch(err){
         console.log(err);
-        res.status(401).json({msg:err.message});
+        res.status(401).json({error:err.message});
     }
 
 })

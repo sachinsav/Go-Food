@@ -25,7 +25,7 @@ function Login() {
             alert("Invalid Credential")
             return;
         }
-        console.log(responseJson)
+     
         localStorage.setItem("email", credential.email)
         localStorage.setItem("authToken",responseJson.authToken);
         navigate("/");
@@ -61,7 +61,7 @@ function Login() {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary mt-3">
           Login
         </button>
       </form>

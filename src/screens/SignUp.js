@@ -26,19 +26,18 @@ function SignUp() {
       });
 
       const responseJson = await response.json();
-      console.log(responseJson);
+      
 
       if (!responseJson.status) {
-        console.log("something is not right");
-        console.log(responseJson);
         return;
       }
 
-      console.log("user created successfully");
+      
       setUserCreated(true); // Update state to indicate user creation
 
     } catch (err) {
-      console.log(err);
+      console.log(err)
+      return;
     }
   };
 
@@ -82,7 +81,7 @@ function SignUp() {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary mt-3">
           Submit
         </button>
       </form>

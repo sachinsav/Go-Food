@@ -5,12 +5,14 @@ import { useCartContext, useDispatchContext } from './CartContext';
 export default function Cart() {
   let data = useCartContext();
   let dispatch = useDispatchContext();
-  console.log(data.length)
-  console.log(data)
+
   if (data.length === 0) {
     return (
       <div>
-        <div className='m-5 w-100 text-center text-white'>The Cart is Empty!</div>
+        <nav className="navbar navbar-dark bg-primary navbar-expand-lg fs-4 text-white ps-3">
+        <b>My Cart</b>
+        </nav>
+        <div className='mt-5 ms-2 w-100 fs-5'>The Cart is Empty!</div>
       </div>
     )
   }
@@ -18,10 +20,8 @@ export default function Cart() {
 
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("email");
-    // console.log(data,localStorage.getItem("userEmail"),new Date())
+    
     let response = await fetch("http://localhost:5000/api/addOrder", {
-      // credentials: 'include',
-      // Origin:"http://localhost:3000/login",
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -31,7 +31,6 @@ export default function Cart() {
         orders: data
       })
     });
-    console.log("JSON RESPONSE:::::", response.status)
     if (response.status === 200) {
       dispatch({ type: "DROP" })
     }
@@ -40,8 +39,9 @@ export default function Cart() {
   let totalPrice = data.reduce((total, food) => total + food.price, 0)
   return (
     <div>
-
-      {console.log(data)}
+      <nav className="navbar navbar-dark bg-primary navbar-expand-lg fs-4 text-white ps-3">
+        <b>My Cart</b>
+      </nav>
       <div className='container m-auto mt-5 table-responsive  table-responsive-sm table-responsive-md' >
         <table className='table table-hover '>
           <thead className=' text-success fs-4'>
@@ -66,9 +66,9 @@ export default function Cart() {
             ))}
           </tbody>
         </table>
-        <div><h1 className='fs-2 text-white'>Total Price: {totalPrice}/-</h1></div>
+        <div><h1 className='fs-2'>Total Price: {totalPrice}/-</h1></div>
         <div>
-          <button className='btn bg-primary mt-5 ' onClick={handleCheckOut} > Check Out </button>
+          <button className='btn bg-primary mt-3 p-2 text-white' onClick={handleCheckOut} > Check Out </button>
         </div>
       </div>
 

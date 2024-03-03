@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useCartContext } from "./CartContext";
 
 function MyOrder() {
 
   const [orderHistory, setOrderHistory] = useState([])
+  const data = useCartContext();
   async function getOrderData() {
     const order = await fetch("http://localhost:5000/api/getOrder", {
       method: "POST",
@@ -12,7 +14,7 @@ function MyOrder() {
       body: JSON.stringify({ email: localStorage.getItem("email") }),
     });
     const orderJson = await order.json();
-    console.log(orderJson);
+
     if(orderJson && orderJson.orders){
     setOrderHistory(orderJson.orders.reverse());
     }
@@ -22,12 +24,12 @@ function MyOrder() {
       await getOrderData();
     };
     fetchData();
-  }, []);
+  }, [data]);
   return (
     <div>
       <div className="container">
         <div className="row">
-          {orderHistory && orderHistory.map(order => (<section className="gradient-custom-2 mb-1 col-lg-6">
+          {orderHistory && orderHistory.map(order => (<section className="gradient-custom-2 my-1 col-lg-6">
             <div className="container h-100">
               <div className="row d-flex justify-content-center align-items-center">
                 <div>
