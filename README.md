@@ -45,5 +45,10 @@ Responsive and User-Friendly Food Ordering Website
 
 ## Screenshots
 
-![Home Page](https://github.com/sachinsav/Go-Food/blob/main/screenshots/home.png)
+<table>
+  <tr>
+    <td align="center"><img src="https://github.com/sachinsav/Go-Food/blob/main/screenshots/home.png" alt="Home Page">Home</td>
+    <td align="center"><img src="https://github.com/sachinsav/Go-Food/blob/main/screenshots/myorder.png" alt="My Order">My Order</td>
+  </tr>
+</table>
 
