@@ -1,70 +1,49 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# [Go Food](https://gofood-1mm6.onrender.com/)
 
-## Available Scripts
+Responsive and User-Friendly Food Ordering Website
 
-In the project directory, you can run:
 
-### `npm start`
+## Technology Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **JavaScript Library:** [React.js](https://reactjs.org/)
+- **State Management:**
+  - [`useState`](https://reactjs.org/docs/hooks-state.html) for local component state.
+  - [`useReducer`](https://reactjs.org/docs/hooks-reference.html#usereducer) for complex state logic or managing global state.
+  - [`useContext`](https://reactjs.org/docs/hooks-reference.html#usecontext) for accessing global state when needed.
+- **Data Storage:**
+  - [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) for client-side storage of small amounts of data.
 
-### `npm test`
+- **Responsive Design:**
+  - Media queries for responsive design.
+  - Responsive design frameworks like [Bootstrap](https://getbootstrap.com/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Server-side Framework:**
+  - [Node.js](https://nodejs.org/) for server-side JavaScript runtime.
+  - [Express.js](https://expressjs.com/) for a fast, unopinionated, minimalist web framework for Node.js.
+- **Database:**
+  - [MongoDB](https://www.mongodb.com/) for a flexible and scalable NoSQL database.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Security
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Authentication:**
+  - [JWT (JSON Web Tokens)](https://jwt.io/) for secure and authenticated communication with the backend.
+  - [bcrypt](https://www.npmjs.com/package/bcryptjs) for password hashing.
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Cloud Platforms like [render](https://render.com/)  for deploying both frontend and backend.
+- **Deployment URL:** https://gofood-1mm6.onrender.com/
 
-### `npm run build` fails to minify
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Home Page](https://github.com/sachinsav/Go-Food/blob/main/screenshots/home.png)
+
