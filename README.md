@@ -46,9 +46,21 @@ Responsive and User-Friendly Food Ordering Website
 ## Screenshots
 
 <table>
+   <tr>
+    <td align="center"><img src="https://github.com/sachinsav/Go-Food/blob/main/screenshots/signup.png" alt="SignUp Page">SignUp</td>
+    <td align="center"><img src="https://github.com/sachinsav/Go-Food/blob/main/screenshots/login.png" alt="SignIn">SignIn</td>
+  </tr>
   <tr>
     <td align="center"><img src="https://github.com/sachinsav/Go-Food/blob/main/screenshots/home.png" alt="Home Page">Home</td>
-    <td align="center"><img src="https://github.com/sachinsav/Go-Food/blob/main/screenshots/myorder.png" alt="My Order">My Order</td>
+    <td align="center"><img src="https://github.com/sachinsav/Go-Food/blob/main/screenshots/myorder.png" alt="My Order">Order History</td>
+  </tr>
+   <tr>
+    <td align="center"><img src="https://github.com/sachinsav/Go-Food/blob/main/screenshots/mycart.png" alt="My Cart">Cart</td>
+    <td align="center"><img src="https://github.com/sachinsav/Go-Food/blob/main/screenshots/runtime_filter.png" alt="My Order">Filter On Page</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://github.com/sachinsav/Go-Food/blob/main/screenshots/homewithoutlogin.png" alt="Home Page">Home (when not login)</td>
+    
   </tr>
 </table>
 
