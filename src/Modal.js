@@ -18,7 +18,7 @@ const OVERLAY_STYLES = {
   left: 0,
   right: 0,
   bottom: 0,
-  backgroundColor: 'rgba(90, 90, 90, .7)',
+  backgroundColor: 'rgba(90, 90, 90, 1)',
   zIndex: 1000
 }
 

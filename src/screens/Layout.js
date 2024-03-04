@@ -7,7 +7,7 @@ function Layout() {
   return (
     <>
     <div><Navbar /></div>
-    
+    <div style={{height:"56px"}}> </div>
     <Outlet />
    
     <div><Footer /></div>

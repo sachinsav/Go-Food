@@ -5,7 +5,7 @@ import { useCartContext, useDispatchContext } from './CartContext';
 export default function Cart() {
   let data = useCartContext();
   let dispatch = useDispatchContext();
-
+  document.getElementById("root").style.visibility = "hidden";
   if (data.length === 0) {
     return (
       <div>
@@ -21,7 +21,7 @@ export default function Cart() {
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("email");
     
-    let response = await fetch("http://localhost:5000/api/addOrder", {
+    let response = await fetch("https://gofood-1mm6.onrender.com/api/addOrder", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

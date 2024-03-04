@@ -42,7 +42,9 @@ function Card({food}) {
           </select>
           <div className="d-inline "><b>  ₹{finalPrice}/-</b></div>
           <hr></hr>
-          <button className='btn btn-primary' onClick={handleAddToCart}>Add to cart</button>
+          <div className='d-flex flex-column'>
+          <button className='btn btn-primary ms-auto' onClick={handleAddToCart}>Add to cart</button>
+          </div>
           </div>
         </div>
         

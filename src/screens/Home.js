@@ -8,7 +8,7 @@ function Home() {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/fooditems");
+      const response = await fetch("https://gofood-1mm6.onrender.com/api/fooditems");
       const responseJson = await response.json();
       setCards(responseJson[0]);
       setCategory(responseJson[1]);
@@ -35,7 +35,7 @@ function Home() {
                   ? ""
                   : cards
                       .filter((food) => food.CategoryName === cat.CategoryName && food.name.toLowerCase().includes(searh.toLowerCase()))
-                      .map((food) => <div key={food._id} className="col-md-6 col-lg-4 col-xl-3"><Card food={food} /></div>)}
+                      .map((food) => <div key={food._id} className="col-xm-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center"><Card food={food} /></div>)}
               </div>
             ))}
       </div>

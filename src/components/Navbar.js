@@ -20,7 +20,7 @@ function Navbar() {
   
   return (
     <>
-     <nav className="navbar navbar-dark bg-primary navbar-expand-lg">
+     <nav className="navbar navbar-dark bg-primary navbar-expand-md fixed-top">
   <div className="container-fluid">
     <Link className="navbar-brand" to="/">GoFood</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,17 +39,17 @@ function Navbar() {
         <ul className="navbar-nav ms-auto">
         {localStorage.getItem("authToken")?(
           <>
-          <li>
-          <button type="button" className="btn btn-primary" onClick={()=>setShowCart(true)}>
-            My Cart <span className="badge badge-light">{cartData.length}</span>
+          <li className="nav-item">
+          <button type="button" className="btn btn-primary nav-link" onClick={()=>setShowCart(true)}>
+            My Cart <span className="badge badge-light bg-danger">{cartData.length}</span>
           </button>
-          {showCart? <Modal onClose={() => {setShowCart(false)}}>
+          {showCart? <Modal onClose={() => {setShowCart(p => {document.getElementById("root").style.visibility = "visible"; return false;})}}>
               <Cart></Cart>
             </Modal>:null}
           </li>
 
-          <li>
-          <button type="button" className="btn btn-primary" onClick={handleLogout}>
+          <li className="nav-item">
+          <button type="button" className="btn btn-primary nav-link" onClick={handleLogout}>
           Logout
           </button>
           </li>

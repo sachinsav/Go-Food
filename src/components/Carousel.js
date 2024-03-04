@@ -2,9 +2,22 @@ import React from "react";
 
 function Carousel({setSearch}) {
   return (
-    <div id="carouselExample" className="carousel slide mb-3">
+    <>
+    <div className="input-group d-md-none">
+          <input
+            type="search"
+            className="form-control rounded my-2 mx-4"
+            placeholder="Search Item"
+            aria-label="Search"
+            onChange = {(e)=>setSearch(e.target.value)}
+            aria-describedby="search-addon"
+          />  
+        </div>
+    
+    <div id="carouselExample" className="carousel slide mb-3 d-none d-md-block">
+      
       <div
-        className="carousel-caption d-sm-block"
+        className="carousel-caption d-block"
         style={{ zIndex: "10" }}
       >
         <div className="input-group">
@@ -61,7 +74,7 @@ function Carousel({setSearch}) {
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
       </button>
-    </div>
+    </div></>
   );
 }
 

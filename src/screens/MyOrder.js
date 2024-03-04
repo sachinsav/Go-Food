@@ -6,7 +6,7 @@ function MyOrder() {
   const [orderHistory, setOrderHistory] = useState([])
   const data = useCartContext();
   async function getOrderData() {
-    const order = await fetch("http://localhost:5000/api/getOrder", {
+    const order = await fetch("https://gofood-1mm6.onrender.com/api/getOrder", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +29,7 @@ function MyOrder() {
     <div>
       <div className="container">
         <div className="row">
-          {orderHistory && orderHistory.map(order => (<section className="gradient-custom-2 my-1 col-lg-6">
+          {orderHistory && orderHistory.map(order => (<section className="gradient-custom-2 my-1 col-md-6 col-xl-4">
             <div className="container h-100">
               <div className="row d-flex justify-content-center align-items-center">
                 <div>
